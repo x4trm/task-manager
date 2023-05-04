@@ -1,8 +1,15 @@
 {% extends 'core/base.html' %}
 {% block title %}Start{% endblock %}
 {%block content%}
-    <div>
-        <h1>Hello World</h1>
-        <h2>Website in progress</h2>
-    </div>
+    {% if request.user.is_authenticated %}
+        <div>
+            <h1>Hello World</h1>
+            <h2>Website in progress</h2>
+        </div>
+    {% else %}
+        <div>
+            <h1>Please Login or SignUp</h1>
+        </div>
+    {% endif %}
+
 {% endblock %}
