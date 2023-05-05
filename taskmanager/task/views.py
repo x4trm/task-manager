@@ -31,13 +31,13 @@ def delete(request,pk):
     task=get_object_or_404(Task,pk=pk,created_by=request.user)
     task.delete()
 
-    return redirect('core:index')
+    return redirect('core:index.html')
 
 @login_required
 def edit(request,pk):
     task=get_object_or_404(Task,pk=pk,created_by=request.user)
     if request.method == 'POST':
-        form = EditTaskForm(request.POST,request.FILES,instance=task)
+        form = EditTaskForm(request.POST,instance=task)
         if form.is_valid():
             form.save()
             return redirect('task:detail',pk=task.id)
