@@ -24,7 +24,7 @@ class Task(models.Model):
     is_done = models.BooleanField(default=False)
     created_by = models.ForeignKey(User,related_name='tasks',on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add = True)
-    deadline = models.DateTimeField(auto_now_add=False)
+    deadline = models.DateField(auto_now_add=False)
     priority = models.CharField(max_length=10,choices=PRIORITY_CHOICES)
 
     class Meta:

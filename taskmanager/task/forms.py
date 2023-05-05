@@ -21,8 +21,8 @@ class NewTaskForm(forms.ModelForm):
                 'class':INPUT_CLASSES
             }),
             'deadline':forms.DateInput(attrs={
-                'class':INPUT_CLASSES,
-                'format':'%d/%m/%Y'
+                'class':'form-control w-full py-4 px-6 rounded-xl border',
+                'type':'date'
             })
         }
 
@@ -41,7 +41,7 @@ class EditTaskForm(forms.ModelForm):
                 'class':INPUT_CLASSES
             }),
             'deadline':forms.DateInput(attrs={
-                'class':INPUT_CLASSES,
-                'format':'%d/%m/%Y'
+                'class':'form-control w-full py-4 px-6 rounded-xl border',
+                'type':'date'
             })
         }
