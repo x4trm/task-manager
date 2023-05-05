@@ -31,7 +31,7 @@ def delete(request,pk):
     task=get_object_or_404(Task,pk=pk,created_by=request.user)
     task.delete()
 
-    return redirect('core:index.html')
+    return redirect('core:index')
 
 @login_required
 def edit(request,pk):

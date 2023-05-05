@@ -26,7 +26,6 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     deadline = models.DateField(auto_now_add=False)
     priority = models.CharField(max_length=10,choices=PRIORITY_CHOICES)
-
     class Meta:
         ordering = ('-deadline',)
         verbose_name_plural = "Tasks"
