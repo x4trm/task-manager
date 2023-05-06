@@ -2,11 +2,13 @@ from django.shortcuts import render,redirect
 from .forms import SignupForm
 from task.models import Task
 
+
 def index(request):
-    tasks = Task.objects.all()
-    return render(request,'core/index.html',{
-        'tasks':tasks,
-    })
+    if request.user.is_authenticated:
+        tasks = Task.objects.filter(created_by=request.user)
+        return render(request, 'core/index.html', {'tasks': tasks})
+    else:
+        return render(request, 'core/index.html')
 
 def signup(request):
     if request.method == 'POST':
