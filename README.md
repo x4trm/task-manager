@@ -20,18 +20,24 @@ or
 ```
 #### Windows
 ```console
-    > .\venv\Scripts\activate.bat
+    > .\venv\Scripts\activate
 ```
 #### Install Dependencies
 ```console
     $ pip install -r requirements.txt
+```
+**Go to taskmanager folder**
+#### Database Migration
+```console
+    $ python3 manage.py makemigrations
+    $ python3 manage.py migrate
 ```
 #### Run
 ```console
     $ python3 manage.py runserver
 ```
 ### Open your browser and go to:
-127.0.0.1:8000/
+**127.0.0.1:8000/**
 
 ## App Screen
 ![Index](./docs/index.png)
